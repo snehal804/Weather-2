@@ -1,0 +1,45 @@
+<div class="container" style="margin: 40px;">
+  <div class="row">
+    <div class="col-md-6">
+      <h3>Weather Information:</h3>
+      <form [formGroup]="form" (ngSubmit)="onsubmit()" class="form-inline md-form mr-auto mb-4">
+        <div class="form-group">
+          <input class="form-control" type="text" id="cityname" aria-describedby="weatherLocation"
+            placeholder="Enter City Name" formControlName="cityname"/>
+            <!-- [ngClass]="{'has-error': form.get('cityname').touched && form.get('cityname').errors}" />
+          <div *ngIf="form.controls.cityname.touched && form.control.cityname.errors" class="text-danger">
+            <div *ngIf="form.controls.cityname.errors.required">
+              City Name is required
+            </div>
+          </div>  -->
+        </div>
+        <div style="margin-left: 20px;">
+        <button type="submit" class="btn btn-primary btn-sm">
+          SEARCH
+        </button>
+        </div>
+       </form>
+    </div>
+    <div class="col-md-6">
+      
+    </div>
+  </div>
+  <div class="row" *ngIf="showdetails" style="margin-top: 40px;">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <p><span style="font-size: 20px; font-weight:'bold';">City Name:</span> {{data.name}}</p>
+          <p><span style="font-size: 20px; font-weight:'bold'">Temprature:</span> {{data.main.temp}}</p>
+          <p><span style="font-size: 20px; font-weight:'bold'">Wind Speed:</span> {{data.wind.speed}}</p>
+          <p><span style="font-size: 20px;font-weight:'bold'">Wind Degree:</span> {{data.wind.deg}}</p>
+          <p><span style="font-size: 20px;font-weight:'bold'">Sunrise:</span> {{data.sys.sunrise}}</p>
+          <p><span style="font-size: 20px;font-weight:'bold'">Sunset:</span> {{data.sys.sunset}}</p>
+
+        </div>
+      </div>
+    </div>
+    <div></div>
+  </div>
+
+
+ 
